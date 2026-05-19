@@ -158,25 +158,15 @@
         </div>
     </section>
 
-    <section id="order" class="py-20 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-200">
-                <div class="text-center mb-10">
-                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 floating">
-                        <i class="fas fa-rocket text-2xl"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold">Ready to Launch?</h2>
-                    <p class="text-slate-600 mt-2">Fill this out and I'll call you within 2 hours.</p>
-                </div>
+    <div class="max-w-xl mx-auto p-6 md:p-8 my-10 bg-white rounded-3xl text-gray-900">
+  
+  <h2 class="text-3xl font-bold font-serif text-center text-gray-900 mb-1">Ready to Launch?</h2>
+  <p class="text-center text-sm text-gray-500 mb-8">Fill this out and I'll call you within 2 hours.</p>
 
-                <!-- 
-                URGENT: Replace YOUR_FORMSPREE_ID_HERE with your ID from formspree.io 
-                Example: action="https://formspree.io/f/mqakovpk"
-                -->
-                <form id="orderForm" action="https://formspree.io/f/meendrao" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Full Name</label>
+  <form action="https://formspree.io/f/your_id" method="POST" id="orderForm" class="space-y-5">
+    
+    <div>
+      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Full Name</label>
       <input type="text" name="full_name" required placeholder="Your Name" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
     </div>
 
@@ -207,13 +197,13 @@
     <div class="pt-2">
       <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Promo Code (Optional)</label>
       <div class="flex gap-2">
-        <input type="text" id="promoInput" placeholder="Enter coupon code" class="flex-1 p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none uppercase placeholder-gray-600">
+        <input type="text" id="promoInput" placeholder="Enter coupon code" class="flex-1 p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none uppercase placeholder-gray-500">
         <button type="button" onclick="applyPromoCode()" class="px-6 rounded-xl font-bold bg-[#D4AF37] text-black hover:bg-[#E5C25C] transition">Apply</button>
       </div>
       <p id="promoMessage" class="text-xs mt-2 hidden"></p>
     </div>
 
-    <div class="bg-neutral-950 p-5 rounded-2xl border border-neutral-800 text-sm space-y-2.5">
+    <div class="bg-neutral-900 p-5 rounded-2xl border border-neutral-800 text-sm space-y-2.5 text-white">
       <div class="flex justify-between text-gray-400">
         <span>Base Rate:</span>
         <span>₹<span id="originalPrice">15,000</span></span>
@@ -236,14 +226,9 @@
     <input type="hidden" id="hiddenFinalPrice" name="final_total_price" value="15000">
     <input type="hidden" id="hiddenAdvancePrice" name="required_advance_payment" value="7500">
 
-    <!-- Bot Protection -->
-                    <input type="text" name="_gotcha" style="display:none">
-
-                    <button type="submit" id="submitBtn" class="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-3 active:scale-[0.98]">
-                        <span>Submit Order Request</span>
-                        <i class="fas fa-arrow-right" id="btnIcon"></i>
-                    </button>
-
+    <button type="submit" class="w-full mt-2 py-4 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-xl transition-all font-medium text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+      Submit Order Request <span class="text-lg">→</span>
+    </button>
 
   </form>
 </div>
