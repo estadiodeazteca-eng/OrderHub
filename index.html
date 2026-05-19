@@ -209,129 +209,39 @@
                         <i class="fas fa-arrow-right" id="btnIcon"></i>
                     </button>
                 </form>
-                <div class="max-w-xl mx-auto p-8 my-10 bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl text-white">
-  <h2 class="text-3xl font-bold font-serif text-center mb-2 text-white">Start Your Project</h2>
-  <p class="text-center text-sm text-gray-400 mb-8">Fill out the details below to initialize your B2B platform.</p>
-
-  <form action="https://formspree.io/f/your_id" method="POST" id="orderForm" class="space-y-6">
-    
-    <div>
-      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Business Name</label>
-      <input type="text" name="business_name" required placeholder="e.g., Gujarat Pump & Spares" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Phone Number</label>
-        <input type="tel" name="phone" required placeholder="e.g., 8610488897" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
-      </div>
-      <div>
-        <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Email Address</label>
-        <input type="email" name="email" required placeholder="e.g., client@gmail.com" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
-      </div>
-    </div>
-
-    <div>
-      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Select Tier</label>
-      <select id="packageSelect" name="selected_package" onchange="calculatePrice()" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
-        <option value="15000">Startup Tier — ₹15,000</option>
-        <option value="40000">Business Tier — ₹40,000</option>
-        <option value="75000">Enterprise Tier — ₹75,000</option>
-      </select>
-    </div>
-
-    <div>
-      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Promo Code (Optional)</label>
-      <div class="flex gap-2">
-        <input type="text" id="promoInput" name="applied_coupon" placeholder="Enter coupon code" class="flex-1 p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none uppercase placeholder-gray-600">
-        <button type="button" onclick="applyPromoCode()" class="px-5 rounded-xl font-bold bg-[#D4AF37] text-black hover:bg-[#E5C25C] transition">Apply</button>
-      </div>
-      <p id="promoMessage" class="text-xs mt-2 hidden"></p>
-    </div>
-
-    <div class="bg-neutral-950 p-5 rounded-2xl border border-neutral-800 text-sm space-y-2">
-      <div class="flex justify-between text-gray-400">
-        <span>Base Rate:</span>
-        <span>₹<span id="originalPrice">15,000</span></span>
-      </div>
-      <div class="flex justify-between text-emerald-400">
-        <span>Discount:</span>
-        <span>- ₹<span id="discountAmount">0</span></span>
-      </div>
-      <hr class="border-neutral-800 my-2">
-      <div class="flex justify-between text-base font-bold text-white">
-        <span>Total Net Valuation:</span>
-        <span>₹<span id="finalPrice">15,000</span></span>
-      </div>
-      <div class="flex justify-between text-base font-bold text-[#D4AF37] bg-[#D4AF37]/10 p-3 rounded-xl mt-3">
-        <span>Required 50% Advance:</span>
-        <span>₹<span id="advancePrice">7,500</span></span>
-      </div>
-    </div>
-
-    <input type="hidden" id="hiddenFinalPrice" name="final_total_price" value="15000">
-    <input type="hidden" id="hiddenAdvancePrice" name="required_advance_payment" value="7500">
-
-    <button type="submit" class="w-full py-4 rounded-xl font-bold bg-[#D4AF37] text-black hover:bg-[#E5C25C] shadow-xl hover:scale-[1.01] transition duration-200 uppercase tracking-wider text-sm">
-      Lock Order Slot & Proceed
-    </button>
-  </form>
+            <div class="mt-6">
+  <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Promo Code (Optional)</label>
+  <div class="flex gap-2">
+    <input type="text" id="promoInput" name="applied_coupon" placeholder="Enter coupon code" class="flex-1 p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none uppercase placeholder-gray-600">
+    <button type="button" onclick="applyPromoCode()" class="px-5 rounded-xl font-bold bg-[#D4AF37] text-black hover:bg-[#E5C25C] transition">Apply</button>
+  </div>
+  <p id="promoMessage" class="text-xs mt-2 hidden"></p>
 </div>
 
-<script>
-  let activeDiscount = 0;
+<div class="bg-neutral-950 p-5 rounded-2xl border border-neutral-800 text-sm space-y-2 mt-4">
+  <div class="flex justify-between text-gray-400">
+    <span>Base Rate:</span>
+    <span>₹<span id="originalPrice">15,000</span></span>
+  </div>
+  <div class="flex justify-between text-emerald-400">
+    <span>Discount:</span>
+    <span>- ₹<span id="discountAmount">0</span></span>
+  </div>
+  <hr class="border-neutral-800 my-2">
+  <div class="flex justify-between text-base font-bold text-white">
+    <span>Total Net Valuation:</span>
+    <span>₹<span id="finalPrice">15,000</span></span>
+  </div>
+  <div class="flex justify-between text-base font-bold text-[#D4AF37] bg-[#D4AF37]/10 p-3 rounded-xl mt-3">
+    <span>Required 50% Advance:</span>
+    <span>₹<span id="advancePrice">7,500</span></span>
+  </div>
+</div>
 
-  function calculatePrice() {
-    let basePrice = parseInt(document.getElementById('packageSelect').value);
-    document.getElementById('originalPrice').innerText = basePrice.toLocaleString('en-IN');
+<input type="hidden" id="hiddenFinalPrice" name="final_total_price" value="15000">
+<input type="hidden" id="hiddenAdvancePrice" name="required_advance_payment" value="7500">
+                
 
-    let promoInput = document.getElementById('promoInput').value.trim().toLowerCase();
-    
-    // Verifying conditions based on your strategy metrics
-    if (promoInput === "orderhub18") {
-      if (basePrice === 15000) activeDiscount = 5000;
-      else if (basePrice === 40000) activeDiscount = 15000;
-      else if (basePrice === 75000) activeDiscount = 35000;
-    } else {
-      activeDiscount = 0;
-    }
-
-    let finalTotal = basePrice - activeDiscount;
-    let advancePayment = finalTotal / 2;
-
-    // Display updates
-    document.getElementById('discountAmount').innerText = activeDiscount.toLocaleString('en-IN');
-    document.getElementById('finalPrice').innerText = finalTotal.toLocaleString('en-IN');
-    document.getElementById('advancePrice').innerText = advancePayment.toLocaleString('en-IN');
-
-    // Sync values with form database so your email tracking records data correctly
-    document.getElementById('hiddenFinalPrice').value = finalTotal;
-    document.getElementById('hiddenAdvancePrice').value = advancePayment;
-  }
-
-  function applyPromoCode() {
-    let input = document.getElementById('promoInput').value.trim().toLowerCase();
-    let msg = document.getElementById('promoMessage');
-
-    msg.classList.remove('hidden');
-    if (input === "orderhub18") {
-      msg.innerText = "✓ Promo code 'ORDERHUB18' verified successfully.";
-      msg.className = "text-xs mt-2 text-emerald-400 font-medium";
-    } else if (input === "") {
-      msg.classList.add('hidden');
-    } else {
-      msg.innerText = "✕ Code unrecognized. Verify entry and retry.";
-      msg.className = "text-xs mt-2 text-rose-400 font-medium";
-    }
-    
-    calculatePrice();
-  }
-
-  // Initial calculation trigger to prevent default rendering glitches
-  document.addEventListener("DOMContentLoaded", function() {
-    calculatePrice();
-  });
-</script>
 
                 <!-- Success State -->
                 <div id="successBox" class="hidden text-center py-10 animate-bounce">
