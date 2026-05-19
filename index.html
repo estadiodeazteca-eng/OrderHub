@@ -236,9 +236,14 @@
     <input type="hidden" id="hiddenFinalPrice" name="final_total_price" value="15000">
     <input type="hidden" id="hiddenAdvancePrice" name="required_advance_payment" value="7500">
 
-    <button type="submit" class="w-full mt-2 py-4 rounded-xl font-bold bg-[#D4AF37] text-black hover:bg-[#E5C25C] shadow-xl transition-all font-medium text-sm uppercase tracking-wider">
-      Submit Order Request
-    </button>
+    <!-- Bot Protection -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <button type="submit" id="submitBtn" class="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-3 active:scale-[0.98]">
+                        <span>Submit Order Request</span>
+                        <i class="fas fa-arrow-right" id="btnIcon"></i>
+                    </button>
+
 
   </form>
 </div>
