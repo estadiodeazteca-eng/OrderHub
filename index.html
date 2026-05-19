@@ -176,31 +176,35 @@
                 <form id="orderForm" action="https://formspree.io/f/meendrao" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                            <input type="text" name="client_name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition" placeholder="Rahul Sharma">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">WhatsApp Number</label>
-                            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition" placeholder="+91 98765 43210">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition" placeholder="rahul@company.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Select Package</label>
-                        <select name="selected_plan" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition bg-white">
-                            <option>Starter (₹15,000)</option>
-                            <option selected>Business (₹40,000)</option>
-                            <option>Enterprise (₹75,000)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Describe Your Project</label>
-                        <textarea name="project_brief" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition" placeholder="I need a website for my new coffee shop in Bangalore..."></textarea>
-                    </div>
-<div class="pt-2">
+                            <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Full Name</label>
+      <input type="text" name="full_name" required placeholder="Your Name" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
+    </div>
+
+    <div>
+      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">WhatsApp Number</label>
+      <input type="tel" name="whatsapp_number" required placeholder="e.g., 8610488897" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
+    </div>
+
+    <div>
+      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Email Address</label>
+      <input type="email" name="email" required placeholder="you@example.com" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
+    </div>
+
+    <div>
+      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Select Package</label>
+      <select id="packageSelect" name="selected_package" onchange="calculatePrice()" class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37]">
+        <option value="15000" selected>Starter (₹15,000)</option>
+        <option value="40000">Business (₹40,000)</option>
+        <option value="75000">Enterprise (₹75,000)</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Describe Your Project</label>
+      <textarea name="project_description" rows="4" placeholder="Tell me about your business goals..." class="w-full p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-[#D4AF37] resize-none"></textarea>
+    </div>
+
+    <div class="pt-2">
       <label class="block text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">Promo Code (Optional)</label>
       <div class="flex gap-2">
         <input type="text" id="promoInput" placeholder="Enter coupon code" class="flex-1 p-4 rounded-xl bg-neutral-800 border border-neutral-700 text-white focus:outline-none uppercase placeholder-gray-600">
@@ -216,7 +220,7 @@
       </div>
       <div class="flex justify-between text-emerald-400">
         <span>Discount:</span>
-        <span>- ₹<span id="discountAmount">5000</span></span>
+        <span>- ₹<span id="discountAmount">0</span></span>
       </div>
       <hr class="border-neutral-800 my-1">
       <div class="flex justify-between text-base font-bold text-white">
@@ -300,8 +304,6 @@
     calculatePrice();
   });
 </script>
-                    
-                </form>
             
 
 
